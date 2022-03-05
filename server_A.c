@@ -7,6 +7,8 @@
 
 #define N_CONN 12
 
+/* Prototipi delle funzioni/procedue */
+
 int
 main ()
 {
