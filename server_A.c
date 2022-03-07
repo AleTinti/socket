@@ -1,7 +1,7 @@
 /* 
 Per compilare il codice, spostarsi nella directory dove sono presenti i file sorgenti.
-Per creare un eseguibile di nome "server", dove "server" e` il nome dell'eseguibile creato mentre "server_C.c" e` il nome del file sorgente:
-$ gcc -o server server_5C.C
+Per creare un eseguibile di nome "server", dove "server" e` il nome dell'eseguibile creato mentre "server_A.c" e` il nome del file sorgente:
+$ gcc -o server server_5A.c
 
 Da riga di comando eseguo il server:
 $ ./server
