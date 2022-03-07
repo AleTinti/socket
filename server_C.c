@@ -1,8 +1,17 @@
 /* 
-gcc -o server server_5C.c -- Per compilare il codice, crea un eseguibile di nome "server"
-./server -- Eseguo il server
-telnet localhost 52000 -- Instauro una connessione con telnet ed invio il messaggio
-netstat -tunape | grep 52000 -- Guardo l'effettiva creazione del socket e connessione
+Per compilare il codice, spostarsi nella directory dove sono presenti i file sorgenti.
+Per creare un eseguibile di nome "server", dove "server" e` il nome dell'eseguibile creato mentre "server_C.c" e` il nome del file sorgente:
+$ gcc -o server server_5C.C
+
+Da riga di comando eseguo il server:
+$ ./server
+
+Apro un'altra finestra e da riga di comando instauro una connessione con telnet ed invio il messaggio:
+$ telnet localhost 52000
+
+Apro un'altra finestra e da riga di comando verifico l'effettiva creazione del socket e connessione:
+$ netstat -tunape | grep 52000
+
 */
 
 #include <stdio.h>
@@ -19,7 +28,7 @@ int socket (int domain, int type, int protocol);
 int bind (int sockfd, const struct sockaddr *addr, socklen_t addrlen);
 int listen (int sockfd, int backlog);
 int accept (int sockfd, struct sockaddr *addr, socklen_t * addrlen);
-int close(fd);
+int close(int fd);
 ssize_t recv (int sockfd, void *buf, size_t len, int flags);
 ssize_t send(int sockfd, const void *buf, size_t len, int flags);
 /* */
@@ -86,7 +95,7 @@ main ()
   mess_send = send (new_sockfd, "Message received!", 18, 0);
   if (mess_send < 0)
     {
-      printf ("Error during recv...\n");
+      printf ("Error during send...\n");
       exit (EXIT_FAILURE);
     }
 
