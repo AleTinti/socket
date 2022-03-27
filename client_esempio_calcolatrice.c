@@ -24,7 +24,7 @@ main (int argc, char *argv[])
 
 
   /* Only port number passed as argument -- es. $ ./my_file portno 
-     Otherwise, if you qnat to pass also the server name use "gethostbyname"
+     Otherwise, if you want to pass also the server name use "gethostbyname"
   */
   if (argc < 2)
     {
